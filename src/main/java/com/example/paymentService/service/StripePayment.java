@@ -49,20 +49,20 @@ public class StripePayment implements PaymentGateWay{
         lineItem1.put("price", price.getId());
         lineItem1.put("quantity", 1);
 
-        Map<String, Object> afterPayment = new HashMap<>();
-        afterPayment.put("type", "redirect");
+//        Map<String, Object> afterPayment = new HashMap<>();
+//        afterPayment.put("type", "redirect");
 
-        Map<String, Object> redirect = new HashMap<>();
-        redirect.put("url", "https://scaler.com/");
+//        Map<String, Object> redirect = new HashMap<>();
+//        redirect.put("url", "https://scaler.com/");
 
-        afterPayment.put("redirect", redirect);
+//        afterPayment.put("redirect", redirect);
 
         List<Object> lineItems = new ArrayList<>();
         lineItems.add(lineItem1);
 
         Map<String, Object> params = new HashMap<>();
         params.put("line_items", lineItems);
-        params.put("after_completion", afterPayment);
+//        params.put("after_completion", afterPayment);
 
         PaymentLink paymentLink = PaymentLink.create(params);
 
